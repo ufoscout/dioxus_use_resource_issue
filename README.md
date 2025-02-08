@@ -1,2 +1,9 @@
-# dioxus_use_resource_issue
-reproducer for https://github.com/DioxusLabs/dioxus/issues/3643
+
+# Serving Your App
+
+Run the following command in the root of your project to start developing with the default platform:
+
+```bash
+cd web
+dx serve
+```

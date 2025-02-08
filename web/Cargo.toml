@@ -1,0 +1,39 @@
+[package]
+name = "web"
+license.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+version.workspace = true
+
+[dependencies]
+dioxus-fullstack = { workspace = true  }
+dioxus = { workspace = true, features = ["router"] }
+serde = { workspace = true }
+ui = { workspace = true }
+
+# web
+dioxus-web = { workspace = true, features = ["hydrate"], optional = true }
+
+# server
+axum = { workspace = true, optional = true }
+dioxus-cli-config = { workspace = true, optional = true }
+tokio = { workspace = true, features = ["full"], optional = true }
+tower-sessions = { workspace = true, optional = true }
+
+[features]
+default = []
+web = [
+    "dioxus-web",
+    "dioxus/web",
+]
+server = [
+    "axum",
+    "dioxus/server",
+    "dioxus-cli-config",
+    "dioxus-fullstack/axum",
+    "tokio",
+    "tower-sessions",
+]
